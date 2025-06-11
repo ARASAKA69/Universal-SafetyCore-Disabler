@@ -1,0 +1,6 @@
+id=SafetyCoreDisabler
+name=Universal SafetyCore Disabler
+version=v1.0
+versionCode=3
+author=ARASAKA
+description=A privacy-first module that universally Uninstalls Google SafetyCore on any device and Replaces it with a New Placeholder Non-Functional App + Prevent Auto Update.
