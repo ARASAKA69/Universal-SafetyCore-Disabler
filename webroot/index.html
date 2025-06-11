@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARASAKA Control Panel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <img src="assets/ahlogo.png" alt="Module Logo" class="logo">
+            <h1>Universal SafetyCore Disabler</h1>
+            <p class="author">by ARASAKA</p>
+        </header>
+
+        <main>
+            <div class="card">
+                <h2>Module Status</h2>
+                <p id="status-text">Checking status...</p>
+                <p class="small-text">This indicates if the placeholder is active.</p>
+            </div>
+
+            <div class="card">
+                <h2>Actions</h2>
+                <p>Manage your module or learn more.</p>
+                <button id="about-button">Module Details</button>
+                <button id="uninstall-button" class="uninstall">Uninstall & Revert</button>
+                <pre id="log-output"></pre>
+            </div>
+            
+            <div class="card">
+                <h2>Our Philosophy</h2>
+                <p>In a world of constant data collection, ARASAKA believes in digital sovereignty. This module is a statement: the only one analyzing your data is you.</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>Reclaim Your Privacy</p>
+        </footer>
+    </div>
+
+    <div id="about-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>About The Module</h2>
+            
+            <h4>What is SafetyCore?</h4>
+            <p>SafetyCore is part of Google's 'Private Compute Core', a system for on-device AI features like Live Captions, Now Playing, and scanning images for sensitive content warnings.</p>
+            
+            <h4>How does this module work?</h4>
+            <p>This module intelligently detects if SafetyCore is a System App or a User App on your device. It then replaces the original application with a completely empty, non-functional placeholder.</p>
+            
+            <h4>Why is this safe from updates?</h4>
+            <p>The placeholder app has a different cryptographic signature than Google's official app. This means the Play Store cannot "update" it, guaranteeing that future versions of SafetyCore won't be pushed to your device while this module is active.</p>
+
+            <h4>Our Philosophy</h4>
+            <p>In a world of constant data collection, ARASAKA believes in digital sovereignty. This module is a statement: the only one analyzing your data is you. Thank you for choosing privacy.</p>
+        </div>
+    </div>
+
+    <div id="confirm-modal" class="modal">
+        <div class="modal-content">
+            <h2 id="confirm-title">Are you sure?</h2>
+            <p id="confirm-text">This will restore the original SafetyCore app and require a reboot to finalize the removal of the module.</p>
+            <div class="modal-buttons">
+                <button id="cancel-uninstall-btn" class="btn-secondary">Cancel</button>
+                <button id="confirm-uninstall-btn" class="btn-danger">Confirm Uninstall</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+:root {
+    --background-color: #121212;
+    --card-color: #1E1E1E;
+    --primary-text-color: #E0E0E0;
+    --secondary-text-color: #A0A0A0;
+    --accent-color: #BB86FC;
+    --button-color: #03DAC6;
+    --danger-color: #CF6679;
+    --gold-color: #FFD700;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--primary-text-color);
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 100px; height: 100px;
+    border-radius: 50%; object-fit: cover;
+    border: 2px solid var(--accent-color);
+    margin-bottom: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+header h1 { font-size: 1.5em; margin-bottom: 0; }
+header .author { color: var(--accent-color); margin-top: 5px; font-weight: bold; }
+
+main { margin-top: 30px; }
+
+.card {
+    background-color: var(--card-color);
+    border-radius: 12px; padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+.card h2 { margin-top: 0; color: var(--button-color); }
+.card .small-text { font-size: 0.8em; color: var(--secondary-text-color); }
+
+button {
+    background-color: var(--accent-color);
+    color: #121212; border: none; border-radius: 8px;
+    padding: 12px 20px; font-size: 1em; font-weight: bold;
+    cursor: pointer; width: 100%; margin-top: 10px;
+    transition: opacity 0.2s;
+}
+
+button.uninstall {
+    background-color: var(--danger-color);
+    color: #121212;
+}
+
+button:active { opacity: 0.8; }
+
+footer {
+    margin-top: 40px; padding-top: 15px;
+    color: var(--secondary-text-color);
+    font-size: 0.9em;
+    border-top: 1px solid var(--gold-color);
+}
+
+.modal {
+    display: none; position: fixed;
+    z-index: 100; left: 0; top: 0;
+    width: 100%; height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.3s;
+}
+
+.modal-content {
+    background-color: var(--card-color);
+    margin: 30% auto; padding: 25px;
+    border: 1px solid var(--accent-color);
+    border-radius: 12px;
+    width: 85%;
+    max-width: 450px;
+    position: relative;
+    animation: slideIn 0.4s forwards;
+    text-align: center;
+}
+
+.modal-content h2 { text-align: left; }
+.modal-content h4 { color: var(--button-color); margin-bottom: 5px; text-align: left;}
+.modal-content p { color: var(--secondary-text-color); line-height: 1.5; text-align: left;}
+
+.close-button {
+    color: #aaa; float: right;
+    font-size: 28px; font-weight: bold;
+    position: absolute; top: 10px; right: 20px;
+}
+.close-button:hover, .close-button:focus { color: white; text-decoration: none; cursor: pointer; }
+
+#log-output {
+    background-color: var(--background-color);
+    border: 1px solid var(--secondary-text-color);
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 15px;
+    font-family: monospace;
+    color: var(--primary-text-color);
+    white-space: pre-wrap;
+    word-break: break-all;
+    display: none;
+    text-align: left;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    gap: 15px;
+}
+
+.btn-secondary {
+    background-color: var(--secondary-text-color);
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+}
+
+@keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+@keyframes slideIn { from {margin-top: -50px; opacity: 0;} to {margin-top: 30%; opacity: 1;} }
